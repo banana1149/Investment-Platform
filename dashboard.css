@@ -1,0 +1,47 @@
+
+
+body {
+  
+    background: radial-gradient(circle at top right, #1e293b 0%, #020617 100%);
+    min-height: 100vh;
+}
+
+::-webkit-scrollbar { 
+    width: 8px; 
+}
+::-webkit-scrollbar-track { 
+    background: #0f172a; 
+}
+::-webkit-scrollbar-thumb { 
+    background: #334155; 
+    border-radius: 4px; 
+}
+::-webkit-scrollbar-thumb:hover { 
+    background: #d4af37; 
+}
+
+.glass-panel {
+    background: rgba(15, 23, 42, 0.7); 
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.glass-input {
+    background: rgba(2, 6, 23, 0.6);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    color: white;
+    transition: all 0.3s ease;
+}
+.glass-input:focus {
+    border-color: #d4af37; 
+    box-shadow: 0 0 0 2px rgba(212, 175, 55, 0.2);
+    outline: none;
+}
+
+.risk-bar {
+    height: 10px;
+    border-radius: 5px;
+    background: linear-gradient(to right, #10b981 0%, #fcd34d 50%, #ef4444 100%); /* Green to Yellow to Red */
+    position: relative;
+}

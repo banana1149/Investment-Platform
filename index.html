@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lammy Capital | Client Login</title>
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <script src="tailwind.config.js"></script>
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="flex items-center justify-center font-sans antialiased">
+
+    <div class="max-w-md w-full p-6 sm:p-8">
+        <div class="form-panel rounded-2xl shadow-2xl p-8">
+            <div class="text-center mb-10">
+                <div class="w-16 h-16 mx-auto rounded-xl bg-gradient-to-br from-brand-gold to-yellow-600 flex items-center justify-center mb-3 shadow-lg shadow-brand-gold/20">
+                    <svg class="w-8 h-8 text-brand-dark" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" />
+                    </svg>
+                </div>
+                <h1 class="text-4xl font-serif font-bold text-white mb-2">
+                    LAMMY <span class="shine-text">CAPITAL</span>
+                </h1>
+                <p class="text-slate-400 text-sm">Wealth Management Portal</p>
+            </div>
+
+            <form id="loginForm" class="space-y-6">
+                
+                <div>
+                    <label for="username" class="block text-sm uppercase tracking-wider text-slate-400 font-semibold mb-2">Username</label>
+                    <input type="text" id="username" name="username" required
+                        class="w-full login-input rounded-lg px-4 py-3 text-base placeholder-slate-600 focus:ring-1 focus:ring-brand-gold"
+                        placeholder="Enter your username">
+                </div>
+                
+                <div>
+                    <label for="password" class="block text-sm uppercase tracking-wider text-slate-400 font-semibold mb-2">Password</label>
+                    <input type="password" id="password" name="password" required
+                        class="w-full login-input rounded-lg px-4 py-3 text-base placeholder-slate-600 focus:ring-1 focus:ring-brand-gold"
+                        placeholder="Enter your password">
+                </div>
+
+                <div id="loginError" class="text-center text-red-400 text-sm font-medium hidden p-2 border border-red-400/30 bg-red-900/20 rounded-lg">
+                    Invalid username or password. Please try again.
+                </div>
+                
+                <button type="submit" id="loginBtn" 
+                    class="w-full bg-brand-gold text-brand-dark font-bold text-lg py-3 rounded-lg hover:bg-yellow-400 transition-colors shadow-lg shadow-brand-gold/30">
+                    Login Securely
+                </button>
+            </form>
+            
+            <p class="text-xs text-slate-500 text-center mt-6">
+                For account assistance, please contact your service officer.
+            </p>
+            
+            </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
