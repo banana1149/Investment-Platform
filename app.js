@@ -2,7 +2,7 @@
 const CLIENT_DATABASE = {
     
     'Corey_113':   { password: 'CoreyDaGOAT113', name: 'Corey Crist', aum: 58794, ytd: 1.5, service_contact: '+1 (302) 250 8241' },
-    'user2':   { password: 'pass2', name: 'Ngozi Okoro', aum: 2200000, ytd: 2.1, service_contact: '+234 81 100 0002' },
+    'Solex_12':   { password: 'Solex2200', name: 'Abu Solomon', aum: 2200000, ytd: 2.1, service_contact: '+234 81 100 0002' },
     'user3':   { password: 'pass3', name: 'Tunde Adebayo', aum: 1800000, ytd: -0.5, service_contact: '+234 81 100 0003' },
     'user4':   { password: 'pass4', name: 'Fatima Musa', aum: 3500000, ytd: 3.0, service_contact: '+234 81 100 0004' },
     'user5':   { password: 'pass5', name: 'Chinedu Eze', aum: 4100000, ytd: 0.8, service_contact: '+234 81 100 0005' },
@@ -74,4 +74,5 @@ document.addEventListener('DOMContentLoaded', () => {
     if (localStorage.getItem('clientData')) {
         window.location.href = 'dashboard.html';
     }
+
 });
