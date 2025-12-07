@@ -14,10 +14,6 @@ function randomSeed(a) {
     }
 }
 
-/**
- 
- * @param {number} aum 
- */
 function renderHoldings(aum) {
     const holdingsBody = document.getElementById('holdingsTableBody');
     holdingsBody.innerHTML = ''; 
@@ -46,9 +42,6 @@ function renderHoldings(aum) {
     });
 }
 
-/**
- * @param {number} ytd 
- */
 function setRiskProfile(ytd) {
     const profileDisplay = document.getElementById('riskProfileDisplay');
     const pointer = document.getElementById('riskPointer');
@@ -74,10 +67,6 @@ function setRiskProfile(ytd) {
     pointer.style.transform = 'translateX(-50%)'; 
 }
 
-/**
- * @param {string} clientName 
- * @param {number} aum 
- */
 function generateMockTransactions(clientName, aum) {
     const transactionsTableBody = document.getElementById('transactionsTableBody');
     transactionsTableBody.innerHTML = ''; 
@@ -97,11 +86,11 @@ function generateMockTransactions(clientName, aum) {
         const type = types[Math.floor(rng() * types.length)];
         const status = statuses[Math.floor(rng() * statuses.length)];
         
-      
+        
         const daysAgo = Math.floor(rng() * 60) + 1;
         const transDate = new Date(today);
         transDate.setDate(today.getDate() - daysAgo);
-        const dateString = transDate.toISOString().substring(0, 10); // YYYY-MM-DD
+        const dateString = transDate.toISOString().substring(0, 10); 
         
         let typeColor = 'text-slate-300';
         let statusColor = 'text-slate-400';
@@ -139,13 +128,9 @@ function showWithdrawalModal() {
     document.getElementById('withdrawalModal').classList.remove('hidden');
     document.getElementById('withdrawalModal').classList.add('flex');
     
-    // Ensure error modal is closed
     closeModal('withdrawalErrorModal');
 }
 
-/**
- * @param {string} id 
- */
 function closeModal(id) {
     const modal = document.getElementById(id);
     if (modal) {
@@ -154,10 +139,6 @@ function closeModal(id) {
     }
 }
 
-/**
-.
- * @param {Event} event - The form submission event.
- */
 function handleWithdrawal(event) {
     event.preventDefault();
     
@@ -217,7 +198,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const clientDataString = localStorage.getItem('clientData');
     
     if (!clientDataString) {
-    
+        
         window.location.href = 'index.html';
         return;
     }
@@ -228,9 +209,9 @@ document.addEventListener('DOMContentLoaded', () => {
         document.getElementById('welcomeMessage').innerText = `Welcome, ${clientData.name.split(' ')[0]}!`;
         document.getElementById('clientNameDisplay').innerText = clientData.name;
 
-        
         document.getElementById('totalAUMDisplay').innerText = formatter.format(clientData.aum);
-        
+        document.getElementById('cashAvailableDisplay').innerText = formatter.format(clientData.cash_available);
+
         const ytdElement = document.getElementById('ytdReturnDisplay');
         ytdElement.innerText = `${clientData.ytd.toFixed(2)}%`;
 
@@ -240,13 +221,15 @@ document.addEventListener('DOMContentLoaded', () => {
         changeElement.className = `text-sm ${changeColor} ml-2`;
         changeElement.innerText = `${changeSign}${clientData.ytd.toFixed(1)}%`;
         
-       
-        setRiskProfile(clientData.ytd);
+        
+        document.getElementById('serviceName').innerText = clientData.name;
+        document.getElementById('serviceEmail').innerText = clientData.email;
+        document.getElementById('servicePhone').innerText = clientData.service_contact;
+        document.getElementById('serviceInitials').innerText = clientData.name.split(' ').map(n => n[0]).join('');
 
         
+        setRiskProfile(clientData.ytd);
         renderHoldings(clientData.aum);
-        
-       
         generateMockTransactions(clientData.name, clientData.aum);
 
 
